@@ -1,69 +1,97 @@
-﻿var myObj, i, j, x = "";
-myObj = {
-    "name": "index",
-    "num": 17,
-    "sites": [
-        { "name": "[600wDL·斯卡哈]", "info": "600w.html" },
-        { "name": "[鬼岛·源赖光]", "info": "onigashima.html" },
-        { "name": "[第六章1·拉二]", "info": "sixth.html" },
-        { "name": "[夏日祭·达芬奇]", "info": "1st.html" },
-        { "name": "[泳装1·枪玉]", "info": "summer1.html" },
-        { "name": "[泳装2·弓呆]", "info": "summer2.html" },
-        { "name": "[第六章2·白枪呆]", "info": "sixth2.html" },
-        { "name": "[魔法少女·伊莉雅]", "info": "prisma.html" },
-        { "name": "[职阶日替·术]", "info": "caster.html" },
-        { "name": "[尼禄祭再临·花嫁尼禄]", "info": "nero2.html" },
-        { "name": "[700wDL·黑贞]", "info": "700w.html" },
-        { "name": "[万圣节复刻·玉藻前]", "info": "halloween1.html" },
-        { "name": "[新万圣节·艳后]", "info": "halloween2.html" },
-        { "name": "[Fate/EXTELLA]", "info": "extella.html" },
-        { "name": "[圆桌骑士]", "info": "knights.html" },
-        { "name": "[圣诞节复刻·杰克]", "info": "xmas1.html" },
-        { "name": "[天草四郎]", "info": "shiro.html" },
-        { "name": "[新圣诞节·弓凛]", "info": "xmas2.html" },
-        { "name": "[阿蒂拉]", "info": "altila.html" },
-        { "name": "[第七章1·恩奇都]", "info": "seventh.html" },
-        { "name": "[第七章2·羽蛇神]", "info": "seventh2.html" },
-        { "name": "[终章·梅林]", "info": "final.html" },
-        { "name": "[新年·武藏]", "info": "newyear.html" },
-        { "name": "[王哈桑]", "info": "yama.html" },
-        { "name": "[月神复刻·俄里翁]", "info": "tsukimil.html" },
-        { "name": "[监狱塔复刻·伯爵]", "info": "gankutsuou.html" },
-        { "name": "[800wDL·达芬奇]", "info": "800w.html" },
-        { "name": "[情人节·BX]", "info": "valentine.html" },
-        { "name": "[新宿1·新宿Archer]", "info": "shinjuku.html" },
-        { "name": "[新宿2·黑A]", "info": "shinjuku2.html" },
-        { "name": "[白情复刻·天草四郎]", "info": "white1.html" },
-        { "name": "[新白情·旧剑]", "info": "white2.html" },
-        { "name": "[本能寺复刻·冲田总司]", "info": "honnouji.html" },
-        { "name": "[明治维新·土方岁三]", "info": "meiji.html" },        
-        { "name": "[CCC预热·CCC众]", "info": "ccc0.html" },
-        { "name": "[CCC·Meltlilith]", "info": "ccc1.html" },
-        { "name": "[CCC2·杀生院祈荒]", "info": "ccc2.html" },
-        { "name": "[900wDL·弓凛]", "info": "900w.html" },
-        { "name": "[雅戈泰1·不夜城的Caster]", "info": "agarta1.html" },
-        { "name": "[雅戈泰2·德雷克]", "info": "agarta2.html" },
-        { "name": "[二周年·福尔摩斯]", "info": "2nd.html" },
-        { "name": "[新泳装1·尼禄]", "info": "2017summer1.html" },
-        { "name": "[新泳装2·黑王]", "info": "2017summer2.html" },
-        { "name": "[新泳装3·梅芙三藏]", "info": "2017summer3.html" },
-        { "name": "[尼禄祭2017·布姐]", "info": "nero3.html" },
-        { "name": "[1000wDL·梅林]", "info": "1000w.html" },
-        { "name": "[Fate/HF·樱]", "info": "fatehf.html" },
-        { "name": "[下总国1·武藏]", "info": "7kengou.html" },
-        { "name": "[下总国2·源赖光酒吞]", "info": "7kengou2.html" },
-        { "name": "[万圣节2017·刑部姬]", "info": "halloween3.html" },
-        { "name": "[FA·天草四郎]", "info": "apocrypha.html" },
-        { "name": "[塞勒姆·喀耳刻哪吒]", "info": "salem.html" },
-        { "name": "[塞勒姆2·阿比盖尔]", "info": "salem2.html" },
-        { "name": "[圣诞2017·艾蕾]", "info": "xmas3.html" }
-    ]
+﻿var Settings = {
+  pickUpServ5: [''],
+  pickUpServ4: [''],
+  pickUpServ3: [''],
+  serv5: ['002', '008', '037', '052', '059', '060', '062', '065', '075', '076', '084', '085', '097', '113', '118', '143'],
+  serv4: ['006', '010', '011', '014', '018', '029', '030', '041', '046', '047', '048', '058', '066', '074', '082', '087', '089', '094', '100', '101', '109', '120', '121', '140', '145', '146'],
+  serv3: ['007', '009', '013', '015', '017', '020', '022', '023', '026', '027', '028', '031', '035', '042', '049', '055', '056', '063', '064', '071', '072', '079', '080', '081', '095', '104', '105', '110', '117', '124', '125'],
+  pickUpCft5: [''],
+  pickUpCft4: [''],
+  pickUpCft3: [''],
+  craft5: ['031', '032', '033', '034', '035', '040', '048', '057', '058', '067', '075', '097', '175', '185', '188', '263', '400'],
+  craft4: ['021', '022', '023', '024', '025', '026', '027', '028', '029', '030', '038', '039', '047', '056', '066', '073', '074', '098', '176', '182', '183', '184', '186', '264', '401'],
+  craft3: ['089', '090', '091', '092', '093', '094', '095', '096', '243', '244', '245', '246', '247', '265', '331', '332', '333', '402'],
+  img: '',
+  title: '',
 }
 
-for (i in myObj.sites) {
-    x += "<a href=" + myObj.sites[i].info + ">" + myObj.sites[i].name + "</a>";
-
+// 
+var up001 = {
+  title: 'Fate/Grand Order：圣晶石召唤～限时卡池～nga游系风推荐召唤～Pick Up召唤！',
+  img: './img/nga001.jpg',
+  settings: [
+    ['d002', 'd003', 'd004'], // 五星从者up
+    ['d005', '116', '145', '164'], // 四星从者up // 145 C闪 116 茨木童子 164 Passionlip
+    [], // 三星从者up
+    ['048', '034', '040', '067'], // 五星礼装up // 34万华镜 40棱镜 48黑杯 67 2030
+    [], // 四星礼装up
+    []  // 三星礼装up
+  ]
 }
 
-document.getElementById("index").innerHTML = x;
- 
+/**
+   * @description up和常驻去重
+   */
+function deduplication () {
+  var settingUP = ['pickUpServ5', 'pickUpServ4', 'pickUpServ3', 'pickUpCft5', 'pickUpCft4', 'pickUpCft3']
+  var setting = ['serv5', 'serv4', 'serv3', 'craft5', 'craft4', 'craft3']
+  for (var k in settingUP) {
+    for (var i in Settings[settingUP[k]]) {
+      Settings[setting[k]].find(function () {
+        var num = Settings[setting[k]].indexOf(Settings[settingUP[k]][i])
+        num != -1 ? Settings[setting[k]].splice(num, 1) : null
+      })
+    }
+  }
+}
+
+/**
+   * @description 获取search
+   * @returns Object
+   */
+function getSearch () {
+  var searchUrl = location.search || '?key=001'
+  var searchObj = {}
+  searchUrl = searchUrl.slice(1)
+  var searchArr = searchUrl.split('&')
+  searchArr.forEach(function (e) {
+    var key = e.split('=')[0]
+    var value = e.split('=')[1]
+    searchObj[key] = value
+  })
+  return searchObj
+}
+
+/**
+   * @description 卡池up设定
+   * @param pickUpServ5 
+   * @param pickUpServ4 
+   * @param pickUpServ3 
+   * @param pickUpCft5 
+   * @param pickUpCft4 
+   * @param pickUpCft3 
+   */
+function setUp ([pickUpServ5, pickUpServ4, pickUpServ3, pickUpCft5, pickUpCft4, pickUpCft3], img, title) {
+  Settings.pickUpCft3 = pickUpCft3
+  Settings.pickUpCft4 = pickUpCft4
+  Settings.pickUpCft5 = pickUpCft5
+
+  Settings.pickUpServ3 = pickUpServ3
+  Settings.pickUpServ4 = pickUpServ4
+  Settings.pickUpServ5 = pickUpServ5
+
+  Settings.img = img
+  Settings.title = title
+  deduplication()
+}
+var search = getSearch()
+switch (search.key) {
+case '001':
+  setUp(up001.settings, up001.img, up001.title)
+  break
+
+default:
+  document.getElementById('banner').src = Settings.img
+  document.title = Settings.title
+  document.getElementById('title').innerText = Settings.title
+}
