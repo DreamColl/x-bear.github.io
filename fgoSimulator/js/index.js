@@ -15,7 +15,6 @@
   title: '',
 }
 
-// 
 var up001 = {
   title: 'Fate/Grand Order：圣晶石召唤～限时卡池～nga游系风推荐召唤～Pick Up召唤！',
   img: './img/nga001.jpg',
@@ -30,8 +29,8 @@ var up001 = {
 }
 
 /**
-   * @description up和常驻去重
-   */
+ * @description up卡池和常驻去重
+ */
 function deduplication () {
   var settingUP = ['pickUpServ5', 'pickUpServ4', 'pickUpServ3', 'pickUpCft5', 'pickUpCft4', 'pickUpCft3']
   var setting = ['serv5', 'serv4', 'serv3', 'craft5', 'craft4', 'craft3']
@@ -46,9 +45,9 @@ function deduplication () {
 }
 
 /**
-   * @description 获取search
-   * @returns Object
-   */
+ * @description 获取search
+ * @returns Object
+ */
 function getSearch () {
   var searchUrl = location.search || '?key=001'
   var searchObj = {}
@@ -63,31 +62,27 @@ function getSearch () {
 }
 
 /**
-   * @description 卡池up设定
-   * @param pickUpServ5 
-   * @param pickUpServ4 
-   * @param pickUpServ3 
-   * @param pickUpCft5 
-   * @param pickUpCft4 
-   * @param pickUpCft3 
-   */
-function setUp ([pickUpServ5, pickUpServ4, pickUpServ3, pickUpCft5, pickUpCft4, pickUpCft3], img, title) {
-  Settings.pickUpCft3 = pickUpCft3
-  Settings.pickUpCft4 = pickUpCft4
-  Settings.pickUpCft5 = pickUpCft5
+ * @description 卡池up设定
+ * @param setting 
+ */
+function setUp (setting) {
+  Settings.pickUpCft3 = up001.settings[5]
+  Settings.pickUpCft4 = up001.settings[4]
+  Settings.pickUpCft5 = up001.settings[3]
 
-  Settings.pickUpServ3 = pickUpServ3
-  Settings.pickUpServ4 = pickUpServ4
-  Settings.pickUpServ5 = pickUpServ5
+  Settings.pickUpServ3 = up001.settings[2]
+  Settings.pickUpServ4 = up001.settings[1]
+  Settings.pickUpServ5 = up001.settings[0]
 
-  Settings.img = img
-  Settings.title = title
+  Settings.img = setting.img
+  Settings.title = setting.title
   deduplication()
 }
+
 var search = getSearch()
 switch (search.key) {
 case '001':
-  setUp(up001.settings, up001.img, up001.title)
+  setUp(up001)
   break
 
 default:
