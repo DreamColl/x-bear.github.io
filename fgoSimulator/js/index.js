@@ -61,9 +61,9 @@ function deduplication () {
  * @returns Object
  */
 function getSearch () {
-  var searchUrl = location.hostname
+  var searchUrl = location.pathname
   var key
-  key = searchUrl.split('.').slice(-1)[0].slice(3)
+  key = searchUrl.split('/').slice(-1)[0].slice(3)
   return key
 }
 
@@ -72,13 +72,13 @@ function getSearch () {
  * @param setting 
  */
 function setUp (setting) {
-  Settings.pickUpCft3 = up001.settings[5]
-  Settings.pickUpCft4 = up001.settings[4]
-  Settings.pickUpCft5 = up001.settings[3]
+  Settings.pickUpCft3 = setting.settings[5]
+  Settings.pickUpCft4 = setting.settings[4]
+  Settings.pickUpCft5 = setting.settings[3]
 
-  Settings.pickUpServ3 = up001.settings[2]
-  Settings.pickUpServ4 = up001.settings[1]
-  Settings.pickUpServ5 = up001.settings[0]
+  Settings.pickUpServ3 = setting.settings[2]
+  Settings.pickUpServ4 = setting.settings[1]
+  Settings.pickUpServ5 = setting.settings[0]
 
   Settings.img = setting.img
   Settings.title = setting.title
