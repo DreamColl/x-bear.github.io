@@ -28,6 +28,18 @@ var up001 = {
   ]
 }
 
+var up002 = {
+  title: 'Fate/Grand Order：新年日替卡池',
+  img: 'http://kazemai.github.io/fgo-vz/common/images/2017/01/banner_101139578.png',
+  settings: [
+    ['12'],
+    [],
+    [],
+    ['412'],
+    ['413'],
+    ['414']
+  ]
+}
 /**
  * @description up卡池和常驻去重
  */
@@ -83,6 +95,8 @@ var search = getSearch()
 switch (search.key) {
 case '001':
   setUp(up001)
+case '002':
+  setUp(up002)
   break
 
 default:
