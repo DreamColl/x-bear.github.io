@@ -1,13 +1,13 @@
 ﻿var Settings = {
-  pickUpServ5: [''],
-  pickUpServ4: [''],
-  pickUpServ3: [''],
+  pickUpServ5: [],
+  pickUpServ4: [],
+  pickUpServ3: [],
   serv5: ['002', '008', '037', '052', '059', '060', '062', '065', '075', '076', '084', '085', '097', '113', '118', '143'],
   serv4: ['006', '010', '011', '014', '018', '029', '030', '041', '046', '047', '048', '058', '066', '074', '082', '087', '089', '094', '100', '101', '109', '120', '121', '140', '145', '146'],
   serv3: ['007', '009', '013', '015', '017', '020', '022', '023', '026', '027', '028', '031', '035', '042', '049', '055', '056', '063', '064', '071', '072', '079', '080', '081', '095', '104', '105', '110', '117', '124', '125'],
-  pickUpCft5: [''],
-  pickUpCft4: [''],
-  pickUpCft3: [''],
+  pickUpCft5: [],
+  pickUpCft4: [],
+  pickUpCft3: [],
   craft5: ['031', '032', '033', '034', '035', '040', '048', '057', '058', '067', '075', '097', '175', '185', '188', '263', '400'],
   craft4: ['021', '022', '023', '024', '025', '026', '027', '028', '029', '030', '038', '039', '047', '056', '066', '073', '074', '098', '176', '182', '183', '184', '186', '264', '401'],
   craft3: ['089', '090', '091', '092', '093', '094', '095', '096', '243', '244', '245', '246', '247', '265', '331', '332', '333', '402'],
@@ -32,7 +32,7 @@ var up002 = {
   title: 'Fate/Grand Order：新年日替卡池',
   img: 'http://kazemai.github.io/fgo-vz/common/images/2017/01/banner_101139578.png',
   settings: [
-    ['12'],
+    ['012'],
     [],
     [],
     ['412'],
@@ -85,18 +85,19 @@ function setUp (setting) {
   deduplication()
 }
 
-window.onload = function(){
-  var key = getSearch()
-  switch (key) {
-  case '001':
-    setUp(up001)
-    break
-  case '002':
-    setUp(up002)
-    break
-  }
+
+var key = getSearch()
+switch (key) {
+case '001':
+  setUp(up001)
+  break
+case '002':
+  setUp(up002)
+  break
+}
+
+window.onload = function() {
   document.getElementById('banner').src = Settings.img
   document.title = Settings.title
   document.getElementById('title').innerText = Settings.title
-  console.info('111')
 }

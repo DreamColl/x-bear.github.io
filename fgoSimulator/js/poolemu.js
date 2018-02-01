@@ -327,10 +327,7 @@ function getTen () {
       results[replacement] = svtPool.draw(1)[0]
     }
   }
-  //results = pool.draw(8);
-  //results.push(goldPool.draw(1)[0]);
-  //results.push(svtPool.draw(1)[0]);
-  //shuffle(results);
+
   log = results
   showResult(log)
 }
