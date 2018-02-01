@@ -63,7 +63,7 @@ function deduplication () {
 function getSearch () {
   var searchUrl = location.pathname
   var key
-  key = searchUrl.split('/').slice(-1)[0].slice(3)
+  key = searchUrl.split('/').slice(-1)[0].slice(3,6)
   return key
 }
 
@@ -85,16 +85,18 @@ function setUp (setting) {
   deduplication()
 }
 
-var key = getSearch()
-switch (key) {
-case '001':
-  setUp(up001)
-  break
-case '002':
-  setUp(up002)
-  break
-default:
+window.onload = function(){
+  var key = getSearch()
+  switch (key) {
+  case '001':
+    setUp(up001)
+    break
+  case '002':
+    setUp(up002)
+    break
+  }
   document.getElementById('banner').src = Settings.img
   document.title = Settings.title
   document.getElementById('title').innerText = Settings.title
+  console.info('111')
 }
