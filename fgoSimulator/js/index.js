@@ -61,16 +61,10 @@ function deduplication () {
  * @returns Object
  */
 function getSearch () {
-  var searchUrl = location.search || '?key=001'
-  var searchObj = {}
-  searchUrl = searchUrl.slice(1)
-  var searchArr = searchUrl.split('&')
-  searchArr.forEach(function (e) {
-    var key = e.split('=')[0]
-    var value = e.split('=')[1]
-    searchObj[key] = value
-  })
-  return searchObj
+  var searchUrl = location.hostname
+  var key
+  key = searchUrl.split('.').slice(-1)[0].slice(3)
+  return key
 }
 
 /**
@@ -91,14 +85,14 @@ function setUp (setting) {
   deduplication()
 }
 
-var search = getSearch()
-switch (search.key) {
+var key = getSearch()
+switch (key) {
 case '001':
   setUp(up001)
+  break
 case '002':
   setUp(up002)
   break
-
 default:
   document.getElementById('banner').src = Settings.img
   document.title = Settings.title
